@@ -1,0 +1,24 @@
+1. View alumni html file and logic file
+
+2. Gallary html.
+
+3. updateyourprofile for alumni page
+
+shubh-shubh@1016
+
+        if spr=="True":
+            msg= "You are an admin please Login from admin Login"
+            return render(request,'user_login_Page.html',{'msg':msg})
+        else:
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return render(request, 'user_log.html')
+        else:
+            msg = "Enter Valid Credentials"
+            return render(request, 'admin_login_Page.html', {'msg': msg})
+
+
+
+

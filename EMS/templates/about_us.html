@@ -1,0 +1,152 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!--Typed.js-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js"></script>
+
+    <title>Alumni Management/About Us</title>
+    <style>
+    .para{
+
+    left: 100;
+   right: 50
+   bottom: 20;
+   width: 101%;
+   background-color: black;
+   color: white;
+    }
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+   display: block;
+}
+</style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Alumni Management</a>
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">Home </a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="/about">About Us<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+
+    </ul>
+  </div>
+     <div class="d-flex py-3 py-lg-0">
+
+                        <a href="/register"
+                           class="btn bg-warning rounded-2 order-0 varela-round-00 fnt-size-16 login-btn text-btn-login"
+                           style="line-height:1.0;">
+                            Register
+                        </a>
+					</div>
+
+</nav>
+
+<h1 style="background-color :white">&nbsp;&nbsp;JSMP's Jayawantrao Sawant College Of Engineering</h1>
+<hr>
+
+
+<br>
+<form >
+
+<div class="card mb-3">
+  <img src="{% static 'JSPM.jpg' %}" class="card-img-top" alt=".">
+  <div class="card-body">
+    <h4 class="card-title">Principle's Message</h4>
+    <p class="card-text"> <h2>Dear Students, </h2><br>Knowledge only Liberates and technical education has been the core for the development of society and humanity. Educational Institutions at JSPM are committed for imparting time based and value added quality learning.
+      <br><br>It is our endeavor at JSPM to make students learn through involvement and commitment. We believe that quality education it the only way for molding students into successful engineers.<br><br>Modern technology helps us in efficient learning process. At JSPM, we set up and adopt all available modern methods to see that students learn the fundamentals of the technology they have chosen.
+      <br><br>For learning, right environment is required and this is available at all our JSPM campuses.
+      <br><br>Apart from classroom teaching and lab works, we believe in overall development of the students. We have adopted the mentor scheme where in each faculty member takes care of fifteen students and has to take the volley of peer group. We emphasis also on presentation skills and innovative projects to be carried out by the students.
+      <br><br>At JSPM we make the learning process like ritual that attracts the students to our institutes. We are totally committed for overall development of student fraternity as we know that they are the only future growth generators of the world.
+      <br><br><b>Dr. R. D. Kanphade</b>
+      <br><b>Principal, JSCOE</b></p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-body">
+    <h5 class="card-title">Training and Placement</h5>
+    <p class="card-text"> The Placement Cell plays a crucial role in
+      proving job opportunities for all Under Graduates
+    students passing out from the college by being connected with reputed firms and industrial establishments and
+    helps them in recruiting our students.<br>&nbsp;&nbsp;&nbsp; This companies visit campus and conduct Campus placement
+    drives and the number of students placed through the campus interviews is continuously rising. Successfully
+    maintaining high placement statistics over the years is a testimony to our quality.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+</div>
+    
+<div>
+    <iframe src="{% static 'institute_brochure_2022.pdf' %}" style="height:110%;width:90%;position:absolute;top:1700px;bottom:10px;"></iframe>
+</div>
+
+
+</form>
+<!-- home section ends -->
+
+
+<!-- footer section starts  -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer section ends -->
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+
+
+
+    <!-- Typed.js DONT TOUCH THIS! -->
+ <div id="typed-strings">
+  </div>
+
+
+  <!-- Footer-->
+<footer class="footer">
+
+  <div class="container">
+    <span class="text-light"> Alumnimanagementsystem.com </span>
+  </div>
+</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

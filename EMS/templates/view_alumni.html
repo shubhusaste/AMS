@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title>Akumni Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+    main {
+  padding: 1em;
+}
+
+.table-wrapper {
+  overflow: auto;
+  max-width: 100%;
+  background:
+    linear-gradient(to right, white 30%, rgba(255,255,255,0)),
+    linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%,
+    radial-gradient(farthest-side at 0% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)),
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+  background-position: 0 0, 100%, 0 0, 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+tr {
+  border-bottom: 1px solid;
+}
+
+th {
+  background-color: #555;
+  color: #fff;
+  white-space: nowrap;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em 1em;
+}
+
+.numeric {
+  text-align: right;
+}
+
+p {
+  text-align: right;
+  margin-top: 1em;
+  font-style: italic;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/adminhome">Alumni Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="nav-link" href="/adminhome">Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/addalumni">Add Alumni</a>
+            </li>
+            <li class="nav-item active ">
+                <a class="nav-link" aria-current="page" href="/viewalumni">View Alumni</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/gallary">Gallary</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/addgallary">Add Gallary</a>
+            </li>
+
+        </ul>
+        </div>
+
+        <div>
+            <form  method="post">
+                {% csrf_token %}
+        <input  type="text" placeholder="Search by name" name="search">&nbsp
+        <input class="btn btn-outline-success" type="submit" value="Search"  style="color:azure">
+      </form>
+        </div>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <div class="d-flex py-3 py-lg-0">
+        <label style="color:azure">Welcome {{user.username}}</label> &nbsp;
+        <a href="/logout" class="btn bg-warning rounded-2 order-0 varela-round-400 fnt-size-16 login-btn text-btn-login"
+           style="line-height:1.0;">
+            Logout
+        </a>
+    </div>
+
+
+</nav>
+<main>
+
+
+
+    <div class="table-wrapper" tabindex="0">
+
+        <table border="2">
+            <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Alumni Name</th>
+                <th>PRN No</th>
+                <th>Address</th>
+                <th>Mobile No</th>
+                <th>Alt Mob No</th>
+                <th>Email</th>
+                <th>Passout Year</th>
+                <th>Branch</th>
+                <th>Job Status</th>
+                <th>Organisation Name</th>
+                <th>Alumni Details</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for alumni in alumnis %}
+            <tr>
+                <td>{{forloop.counter}}.&nbsp;&nbsp;</td>
+                <td>{{alumni.first_name}}&nbsp;{{alumni.last_name}}</td>
+                <td>{{alumni.prn_no}}</td>
+                <td >{{alumni.address}}</td>
+                <td>{{alumni.mob1}}</td>
+                <td>{{alumni.mob2}}</td>
+                <td>{{alumni.email}}</td>
+                <td>{{alumni.passout}}</td>
+                <td>{{alumni.branch}}</td>
+                <td>{{alumni.job_status}}</td>
+                <td>{{alumni.org_name}}</td>
+                <td>{{alumni.about_alumni}}</td>
+                <td><a href="/admin_updateprofile/{{alumni.id}}"><svg
+                        xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+   <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+   <path d="M16 5l3 3"></path>
+
+</svg></a>
+                    <a href="/admin_deletealumni/{{alumni.id}}" class="btn btn-danger" onclick="return confirm('Are your sure to Delete ?')"><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                                                                  viewBox="0 0 16 16"
+                                                          width="16" height="16"><path
+                            fill-rule="evenodd" d="M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z"></path></svg></a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     <script>
+     {% if msgs == "Yes" %}
+     swal("{{ msg }}");
+    {% endif %}</script>
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+-->
+</body>
+</html>
